@@ -1,3 +1,12 @@
+#!/usr/bin/env -S uv run --script
+# /// script
+# requires-python = ">=3.12"
+# dependencies = [
+#     "modal>=1.1.4",
+# ]
+# ///
+
+
 """
 Low-latency YOLO inference over QUIC between a GPU-powered Modal container and a client.
 
@@ -11,12 +20,16 @@ https://gist.github.com/aksh-at/e85a5517610a1a2bff35fac41d4c982f
 YOLO model code from:
 https://github.com/modal-labs/modal-examples/tree/main/07_web_endpoints/webrtc
 
-Usage:
-# Start server (rendezvous + YOLO on GPU)
-> uvx modal serve quic_yolo_modal.py
+# Setup
 
-# Run client locally
-> uv run client.py --url <rendezvous_url> [--fake]  # --fake if no webcam available
+modal setup
+chmod +x quic_yolo_modal.py
+chmod +x client.py
+
+# Use
+
+modal serve quic_yolo_modal.py  # start server (rendezvous + YOLO on GPU)
+./client.py --url <rendezvous_url> [--fake]  # --fake if no webcam available, runs client locally
 """
 
 import asyncio

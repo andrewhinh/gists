@@ -8,13 +8,16 @@
 
 """
 A minimal Git implementation in Python.
+
 Credit to https://wyag.thb.lt/ for the original implementation.
 
-Test commands (copy and run in terminal):
+Test commands:
 
 # Setup and basic workflow
 chmod +x simple-git.py
-mkdir /tmp/test-git && cd /tmp/test-git
+mkdir /tmp/test-git
+mv simple-git.py /tmp/test-git/
+cd /tmp/test-git
 ./simple-git.py init
 echo "hello world" > test.txt
 ./simple-git.py add test.txt

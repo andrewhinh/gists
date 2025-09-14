@@ -1,3 +1,4 @@
+#!/usr/bin/env -S uv run --script
 # /// script
 # dependencies = [
 #     "modal>=1.0.3",
@@ -6,10 +7,25 @@
 # ]
 # ///
 
-# in .env, set EMAIL_SENDER, SMTP_SERVER, SMTP_PORT, SMTP_USERNAME, SMTP_PASSWORD
-# run locally with `uv run --script pubmed.py`
-# run remotely with `uvx --with python-dotenv modal run pubmed.py`
-# deploy with `uvx --with python-dotenv modal deploy pubmed.py`
+"""
+A cron job that sends an email with the latest nutrition papers from PubMed.
+
+# Setup
+Create a .env and set:
+- EMAIL_SENDER
+- SMTP_SERVER
+- SMTP_PORT
+- SMTP_USERNAME
+- SMTP_PASSWORD
+
+modal setup
+chmod +x pubmed.py
+
+# Use
+./pubmed.py  # run locally
+modal run pubmed.py  # run remotely
+modal deploy pubmed.py  # deploy on Modal
+"""
 
 import os
 import smtplib

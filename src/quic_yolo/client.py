@@ -1,3 +1,4 @@
+#!/usr/bin/env -S uv run --script
 # /// script
 # requires-python = ">=3.12"
 # dependencies = [
@@ -7,6 +8,10 @@
 #     "pynat==0.6.0",
 # ]
 # ///
+
+"""
+See quic_yolo_modal.py for more details.
+"""
 
 import argparse
 import asyncio
