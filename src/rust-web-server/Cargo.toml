@@ -1,0 +1,14 @@
+[package]
+name = "rust-web-server"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+tokio = { version = "1", features = [
+  "macros",
+  "rt-multi-thread",
+  "net",
+  "io-util",
+  "fs",
+  "time",
+] }
